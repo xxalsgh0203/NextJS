@@ -1,0 +1,22 @@
+.header {
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #132f52;
+}
+
+.nav{
+    padding: 8px;
+    border: pink;
+    border-bottom: 1px solid #132f52;
+}
+
+.nav a{
+    padding: 0px 8px;
+    color:aqua;
+}
+
+.product{
+    padding: 30px;
+}
