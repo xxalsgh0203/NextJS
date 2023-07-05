@@ -1,9 +1,10 @@
 import Link from "next/link";
 import styles from './layout.module.css'
+import { getProducts } from "@/service/products";
 
-const products = ['pants', 'Shirts', 'Skirts', 'Shoes'];
 
 export default function ProductPage() {
+    const products = getProducts();
     return <>
         <h1>제품페이지</h1>
         <ul>
