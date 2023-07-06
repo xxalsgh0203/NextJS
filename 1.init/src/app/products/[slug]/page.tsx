@@ -12,19 +12,19 @@ export function generateMetadata({ params }: Props) {
     };
 }
 
-export default function PantsPage({ params: { slug } }: Props) {
-    const product = getProduct(slug);
+export default async function ProductPage({ params: { slug } }: Props) {
+    const product = await getProduct(slug);
 
     // if (!product) {
 
     // }
-    return <h1>{product} 제품 설명 페이지</h1>;
+    return <h1>{product.name} 제품 설명 페이지</h1>;
 }
 
-export function generateStaticParams() { // 규격사항. 다이나믹 라우트 페이지에서 특정한 경로에 대해서 페이지를 만들고 싶을떄 경로를 알려줌
-    const products = getProducts();
+export async function generateStaticParams() { // 규격사항. 다이나믹 라우트 페이지에서 특정한 경로에 대해서 페이지를 만들고 싶을떄 경로를 알려줌
+    const products = await getProducts();
     return products.map(product => ({
-        slug: product
+        slug: product.id,
     }))
 
 }
